@@ -15,6 +15,8 @@ test('first playwright test to launch url using page ',async ({page})=>{
 })
 
 */
+
+
 test('page title test',async ({page})=>{
     await page.goto("https://bonigarcia.dev/selenium-webdriver-java/web-form.html")
     const title =   await page.title() // Actual result
@@ -52,16 +54,10 @@ test('page title test',async ({page})=>{
      await expect(disbaledInput).toBeDisabled();
      await page.waitForTimeout(4000)
    });
+   
 
 
 
-   test('handle dropdown', async({page})=>{
-     await page.goto("https://bonigarcia.dev/selenium-webdriver-java/web-form.html")
-     const dropdown= await page.locator("select[name='my-select']")
-     //get all the available option in dropdown
-     const allavailableoption= await dropdown.locator('option').allInnerTexts()
-     console.log(allavailableoption)
-
-   })
+   
 
  
