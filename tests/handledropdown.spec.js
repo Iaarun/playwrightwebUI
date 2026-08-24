@@ -63,6 +63,19 @@ test('handle dropdown', async({page})=>{
         await page.waitForTimeout(2000)
      }
     await page.waitForTimeout(2000)
+   }) 
+
+   test('slider in withouth target range ', async({page})=>{
+     await page.goto("https://jqueryui.com/slider/")
+     const framelocator=  await page.frameLocator(".demo-frame")
+     const sliderknob = await framelocator.locator("//div[@id='slider']/span")
+     await page.waitForTimeout(2000)
+     await sliderknob.dragTo(sliderknob, {
+       targetPosition: { x:1000, y:0},
+       force: true
+     })
+     console.log("End location: "+ sliderknob.getAttribute('style'))
+     await page.waitForTimeout(2000)
    })
     
 
@@ -80,7 +93,7 @@ test('handle dropdown', async({page})=>{
      // page.locator()
 
    })
-     */
+     
     test("nested frames ", async({page})=>{
         await page.goto("https://demoqa.com/nestedframes")
         const frame1 = await page.frameLocator("#frame1")
@@ -89,10 +102,28 @@ test('handle dropdown', async({page})=>{
         const frame2 = await frame1.frameLocator("iframe[srcdoc='<p>Child Iframe</p>']")
         const text2 = await frame2.locator("(//p[normalize-space()='Child Iframe'])[1]").textContent()
         console.log(text2)
-        
-       const text3=  await page.locator("//div[@id='framesWrapper']/h1").textContent()
-       console.log(text3)
+        const text3=  await page.locator("//div[@id='framesWrapper']/h1").textContent()
+    }) 
+*/
+    test("scroll till a specific element ", async({page})=>{
+        await page.goto("https://demowebshop.tricentis.com/")
+      const featuredproducts =   await page.locator("//img[@title='Show details for Build your own computer']")
+      await featuredproducts.scrollIntoViewIfNeeded()
+      await page.waitForTimeout(2000)
     })
+    
+    test("scroll till bottom of the page", async({page})=>{
+        await page.goto("https://demowebshop.tricentis.com/")
+      await page.evaluate(()=>window.scrollTo(0,document.body.scrollHeight))
+      await page.waitForTimeout(2000)
+    }) 
+    test("scroll using mouse wheel", async({page})=>{
+        await page.goto("https://demowebshop.tricentis.com/")
+     await page.mouse.wheel(0,400)
+      await page.waitForTimeout(2000)
+    }) 
+  
+
 
 
 

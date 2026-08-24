@@ -17,7 +17,10 @@ const config =({
   
   use: {
     broswerName: 'chromium',
-    headless : false
+    headless : false,
+    launchOptions:{
+      slowmo: 500
+    }
   },
  
 });
