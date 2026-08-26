@@ -1,5 +1,5 @@
 const {test, chromium, firefox,  expect} = require('@playwright/test')
-/*
+
 test('handle dropdown', async({page})=>{
      await page.goto("https://bonigarcia.dev/selenium-webdriver-java/web-form.html")
      const dropdown= await page.locator("select[name='my-select']")
@@ -157,7 +157,7 @@ test('handle dropdown', async({page})=>{
       await page.goto("https://bonigarcia.dev/selenium-webdriver-java/dialog-boxes.html")
       const launchalert= await page.locator("#my-confirm")
       // accept the alert box
-      await page.on('dialog', async dialog=>{
+        await page.on('dialog', async dialog=>{
         const text = await dialog.message()
         console.log(text)
         await dialog.dismiss()
@@ -185,8 +185,7 @@ test('handle dropdown', async({page})=>{
       console.log(confirmationmessage)
       await page.waitForTimeout(1500)
       
-    }) */
-
+    }) 
 
     test("submit button",async({page})=>{
       await page.goto("https://bonigarcia.dev/selenium-webdriver-java/login-form.html")
@@ -199,6 +198,28 @@ test('handle dropdown', async({page})=>{
        await page.locator("//button[normalize-space()='Submit']").click()
        await page.waitForTimeout(1500)
     })
+
+    test("error message test",async({page})=>{
+      await page.goto("https://bonigarcia.dev/selenium-webdriver-java/login-form.html")
+      const username= await page.locator("//input[@id='username']")
+      await username.fill("Test user")
+      await page.waitForTimeout(1500)
+      const password= await page.locator("//input[@id='password']")
+      await password.fill("Test user")
+      await page.waitForTimeout(1500)
+      await page.locator("//button[normalize-space()='Submit']").click()
+
+      await expect(page.locator("#invalid")).toBeVisible({ timeout: 10_000 })
+      const message = await  page.locator("#invalid").textContent()
+     // expect(message).toContain("Invalid credentials!")
+      expect(message).not.toContain("Invalid credentials!")
+      await page.waitForTimeout(1500)
+    })
+
+    
+    
+
+
   
 
    

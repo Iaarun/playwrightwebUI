@@ -15,7 +15,7 @@ import { trace } from 'node:console';
  */
 const config =({
   testDir: './tests',
-  
+  testMatch: '**/*.spec.js',
   use: {
     broswerName: 'chromium',
     headless : false,
