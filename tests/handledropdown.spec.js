@@ -104,7 +104,7 @@ test('handle dropdown', async({page})=>{
         console.log(text2)
         const text3=  await page.locator("//div[@id='framesWrapper']/h1").textContent()
     }) 
-*/
+
     test("scroll till a specific element ", async({page})=>{
         await page.goto("https://demowebshop.tricentis.com/")
       const featuredproducts =   await page.locator("//img[@title='Show details for Build your own computer']")
@@ -117,16 +117,90 @@ test('handle dropdown', async({page})=>{
       await page.evaluate(()=>window.scrollTo(0,document.body.scrollHeight))
       await page.waitForTimeout(2000)
     }) 
+
     test("scroll using mouse wheel", async({page})=>{
         await page.goto("https://demowebshop.tricentis.com/")
      await page.mouse.wheel(0,400)
       await page.waitForTimeout(2000)
-    }) 
+    })
+
+    test("infinite scroll ", async({page})=>{
+      await page.goto("https://bonigarcia.dev/selenium-webdriver-java/infinite-scroll.html")
+      let previousHeight=0
+      let currentHeight = await page.evaluate(()=> document.body.scrollHeight)
+      let maxScroll=5
+      let scroll=0
+      while(previousHeight<currentHeight && scroll<maxScroll){
+         previousHeight = currentHeight
+        await page.evaluate(()=>window.scrollTo(0,document.body.scrollHeight))
+        await page.waitForTimeout(1000)
+        currentHeight = await page.evaluate(()=> document.body.scrollHeight)
+        scroll++
+} })
+
+     test("alert dialog ", async({page})=>{
+      await page.goto("https://bonigarcia.dev/selenium-webdriver-java/dialog-boxes.html")
+      const launchalert= await page.locator("#my-alert")
+      // accept the alert box
+      await page.on('dialog', async dialog=>{
+        const text = await dialog.message()
+        console.log(text)
+        await dialog.accept()
+
+      })
+      await launchalert.click()
+      await page.waitForTimeout(1500)
+      
+    })
+
+     test("confirmation dialog ", async({page})=>{
+      await page.goto("https://bonigarcia.dev/selenium-webdriver-java/dialog-boxes.html")
+      const launchalert= await page.locator("#my-confirm")
+      // accept the alert box
+      await page.on('dialog', async dialog=>{
+        const text = await dialog.message()
+        console.log(text)
+        await dialog.dismiss()
+
+      })
+      await launchalert.click()
+      const confirmationmessage= await page.locator("//p[@id='confirm-text']").textContent()
+      console.log(confirmationmessage)
+      await page.waitForTimeout(1500)
+      
+    })
+
+     test("prompt dialog ", async({page})=>{
+      await page.goto("https://bonigarcia.dev/selenium-webdriver-java/dialog-boxes.html")
+      const launchalert= await page.locator("#my-prompt")
+      // accept the alert box
+      await page.on('dialog', async dialog=>{
+        const text = await dialog.message()
+        console.log(text)
+        await dialog.accept("This is test data in the prompt")
+
+      })
+      await launchalert.click()
+      const confirmationmessage= await page.locator("#prompt-text").textContent()
+      console.log(confirmationmessage)
+      await page.waitForTimeout(1500)
+      
+    }) */
+
+
+    test("submit button",async({page})=>{
+      await page.goto("https://bonigarcia.dev/selenium-webdriver-java/login-form.html")
+      const username= await page.locator("//input[@id='username']")
+      await username.fill("Test user")
+      await page.waitForTimeout(1500)
+      const password= await page.locator("//input[@id='password']")
+      await password.fill("Test user")
+      await page.waitForTimeout(1500)
+       await page.locator("//button[normalize-space()='Submit']").click()
+       await page.waitForTimeout(1500)
+    })
   
 
-
-
-
-
+   
 
 
