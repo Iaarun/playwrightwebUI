@@ -27,4 +27,8 @@ this gets executed after all the teastcases and only once
 cleanup
 # usereadme file for any comments and configurationdecription
 adding the comments here for record
+<<<<<<< HEAD
 
+=======
+new comment
+>>>>>>> f64a4eb (Add new comment to README)
