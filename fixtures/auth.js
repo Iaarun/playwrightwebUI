@@ -3,6 +3,11 @@ import dotenv from 'dotenv';
 dotenv.config();
 //const baseurl = process.env.SAUCELAB_URL
 const {SAUCELAB_URL,SAUCELAB_USERNAME,SAUCELAB_PASSWORD} = process.env
+
+if (!SAUCELAB_URL || !SAUCELAB_USERNAME || !SAUCELAB_PASSWORD) {
+    throw new Error('Missing SAUCELAB_URL, SAUCELAB_USERNAME, or SAUCELAB_PASSWORD in .env')
+}
+
 //fixture
 export const test= base.extend({
     auth:async({page},use)=>{
