@@ -16,12 +16,21 @@ import { trace } from 'node:console';
 const config =({
   testDir: './tests',
   testMatch: '**/*.spec.js',
+  timeout:15000,
+  reporter:[['allure-playwright', {outputFolder: 'allure-results'}],['html',{open:'never'}]],
+   workers: '50%',
+  expect: { 
+    timeout: 10_000 
+  },
+
   use: {
-    broswerName: 'chromium',
+    
     headless : false,
+    browserName: 'chromium',
     launchOptions:{
-      slowmo: 500
-    }
+      slowmo: 2000
+    },
+    screenshot: 'only-on-failure'
   },
  
 });

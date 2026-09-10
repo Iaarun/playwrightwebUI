@@ -216,8 +216,56 @@ test('handle dropdown', async({page})=>{
       await page.waitForTimeout(1500)
     })
 
+    test("navigation commands",async({page})=>{
+      await page.goto("https://bonigarcia.dev/selenium-webdriver-java/index.html")
+      var homepageurl= await page.url()
+      console.log(homepageurl)
+
+     const webform= await page.locator("//a[normalize-space()='Web form']")
+     await webform.click()
+     var webformurl= await page.url()
+     console.log(webformurl)
+     await page.goBack()
+    var homepageurl= await page.url()
+      console.log(homepageurl)
+     await page.goForward()
+    var webformurl= await page.url()
+     console.log(webformurl)
+      await page.waitForTimeout(1500)
+    })
+
+    test("multiple tabs",async({page, context})=>{
+      await page.goto("https://bonigarcia.dev/selenium-webdriver-java/index.html")
+     const webform= await page.locator("//a[normalize-space()='Web form']")
+     const[newpage]=  await Promise.all([
+        context.waitForEvent('page'),
+        webform.click({modifiers:['Control']})
+      ])
+     await newpage.waitForLoadState()
+     console.log(await page.url())
+      await page.waitForTimeout(3000)
+     const input =  await newpage.locator('#my-text-id')
+     await input.fill("Test Data in new tab")
+      await newpage.waitForTimeout(3000)
+      newpage.close()
+      await page.waitForTimeout(3000)
+    })
     
-    
+    test.only("handle calender ",async({page})=>{
+      await page.goto("https://bonigarcia.dev/selenium-webdriver-java/web-form.html")
+      const nextyear= new Date().getFullYear()+1
+      console.log(nextyear)
+      const targetyear = nextyear.toString()
+      const targetMonth = 'February'
+      const targetDate = '10'
+      await page.waitForTimeout(3000)
+    })
+
+   
+
+
+
+
 
 
   
