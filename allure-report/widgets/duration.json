@@ -1,0 +1,1 @@
+[{"uid":"2654d0d200ffd70a","name":"login test on saucedemo","time":{"start":1788491675446,"stop":1788491676458,"duration":1012},"status":"passed","severity":"normal"},{"uid":"2febf8e207122cbc","name":"add to cart test on saucedemo","time":{"start":1788491677032,"stop":1788491692178,"duration":15146},"status":"broken","severity":"normal"}]
