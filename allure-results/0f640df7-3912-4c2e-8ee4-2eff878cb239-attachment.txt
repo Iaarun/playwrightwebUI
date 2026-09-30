@@ -1,0 +1,180 @@
+200
+[
+  {
+    first_name: 'Jane',
+    last_name: 'Smith',
+    email: 'jane.smith@example.com',
+    id: '1'
+  },
+  {
+    first_name: 'Arun',
+    last_name: 'Singh',
+    email: 'arun.singh@adobe.com',
+    id: '3'
+  },
+  {
+    first_name: 'Arun',
+    last_name: 'Singh',
+    email: 'arun.singh@adobe.com',
+    id: '4'
+  },
+  {
+    first_name: 'Arun',
+    last_name: 'Singh',
+    email: 'arun.singh@adobe.com',
+    id: '5'
+  },
+  {
+    first_name: 'Arun',
+    last_name: 'Singh',
+    email: 'arun.singh@adobe.com',
+    id: '6'
+  },
+  {
+    first_name: 'testUser',
+    last_name: 'user1',
+    email: 'testuser@codingthesmartway.com',
+    id: '7'
+  },
+  {
+    first_name: 'Donald',
+    last_name: 'Trumph',
+    email: 'dt@test.com',
+    id: '8'
+  },
+  {
+    first_name: '{{username}}',
+    last_name: '{{lastname}}',
+    email: 'ivan.hogan@test.com',
+    id: '9'
+  },
+  {
+    first_name: '{{username}}',
+    last_name: '{{lastname}}',
+    email: 'Christopher.gil@test.com',
+    id: '10'
+  },
+  {
+    first_name: '{{username}}',
+    last_name: '{{lastname}}',
+    email: 'kevin.sandler@test.com',
+    id: '11'
+  },
+  {
+    first_name: 'Arun',
+    last_name: 'Singh',
+    email: 'arun.singh@adobe.com',
+    id: '12'
+  },
+  {
+    first_name: 'Arun',
+    last_name: 'Singh',
+    email: 'arun.singh@adobe.com',
+    id: '13'
+  },
+  { name: '', id: '15' },
+  {
+    last_name: 'Angle',
+    first_name: 'Charlie',
+    email: 'charlie.angle@test.com',
+    id: '16'
+  },
+  { name: '', id: '18' },
+  {
+    last_name: 'Angle',
+    first_name: 'Charlie',
+    email: 'charlie.angle@test.com',
+    id: '19'
+  },
+  {
+    first_name: 'John',
+    last_name: 'Doe',
+    email: 'john.doe@example.com',
+    id: '20'
+  },
+  { id: '21' },
+  {
+    first_name: 'testUser',
+    last_name: 'user1',
+    email: 'testuser@codingthesmartway.com',
+    id: '22'
+  },
+  {
+    first_name: 'John',
+    last_name: 'Doe',
+    email: 'john.doe@example.com',
+    id: '23'
+  },
+  {
+    first_name: 'John',
+    last_name: 'Doe',
+    email: 'john.doe@example.com',
+    id: '24'
+  },
+  { name: '', id: '26' },
+  {
+    last_name: 'Angle',
+    first_name: 'Charlie',
+    email: 'charlie.angle@test.com',
+    id: '27'
+  },
+  {
+    first_name: 'John',
+    last_name: 'Doe',
+    email: 'john.doe@example.com',
+    id: '28'
+  },
+  {
+    first_name: 'testUser12',
+    last_name: 'user12',
+    email: 'testuser12@codingthesmartway.com',
+    id: 'Xi-Kk49En3w'
+  },
+  {
+    first_name: 'testUser12',
+    last_name: 'user12',
+    email: 'testuser12@codingthesmartway.com',
+    id: '2rNyOneZjgU'
+  },
+  {
+    first_name: 'testUser12',
+    last_name: 'user12',
+    email: 'testuser12@codingthesmartway.com',
+    id: 'rFmizgCyXTA'
+  },
+  {
+    first_name: 'testUser12',
+    last_name: 'user12',
+    email: 'testuser12@codingthesmartway.com',
+    id: '9wS2q1TvhHA'
+  },
+  {
+    first_name: 'testUser12',
+    last_name: 'user12',
+    email: 'testuser12@codingthesmartway.com',
+    id: 'AKhGx4nZHng'
+  },
+  {
+    first_name: 'testUser12',
+    last_name: 'user12',
+    email: 'testuser12@codingthesmartway.com',
+    id: 'YE3uhUedO18'
+  },
+  {
+    first_name: 'testUser321',
+    last_name: 'user2updated',
+    email: 'testuser@codingthesmartway.com',
+    id: 'IHb2-mplluk'
+  }
+]
+{
+  'x-powered-by': 'tinyhttp',
+  'access-control-allow-origin': '*',
+  'access-control-allow-methods': 'GET, HEAD, PUT, PATCH, POST, DELETE',
+  'access-control-allow-headers': 'content-type',
+  'content-type': 'application/json',
+  date: 'Tue, 29 Sep 2026 02:55:24 GMT',
+  connection: 'keep-alive',
+  'keep-alive': 'timeout=5',
+  'content-length': '3471'
+}

@@ -1,0 +1,13 @@
+200
+Jane
+{
+  'x-powered-by': 'tinyhttp',
+  'access-control-allow-origin': '*',
+  'access-control-allow-methods': 'GET, HEAD, PUT, PATCH, POST, DELETE',
+  'access-control-allow-headers': 'content-type',
+  'content-type': 'application/json',
+  date: 'Tue, 29 Sep 2026 03:10:08 GMT',
+  connection: 'keep-alive',
+  'keep-alive': 'timeout=5',
+  'content-length': '3471'
+}

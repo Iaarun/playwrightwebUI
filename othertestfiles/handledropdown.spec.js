@@ -251,7 +251,7 @@ test('handle dropdown', async({page})=>{
       await page.waitForTimeout(3000)
     })
     
-    test.only("handle calender ",async({page})=>{
+    test("handle calender ",async({page})=>{
       await page.goto("https://bonigarcia.dev/selenium-webdriver-java/web-form.html")
       const nextyear= new Date().getFullYear()+1
       console.log(nextyear)

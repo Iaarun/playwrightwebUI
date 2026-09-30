@@ -1,0 +1,3 @@
+Page title: Hands-On Selenium WebDriver with Java
+Page URL is: https://bonigarcia.dev/selenium-webdriver-java/web-form.html
+[AsyncFunction: isDisabled]

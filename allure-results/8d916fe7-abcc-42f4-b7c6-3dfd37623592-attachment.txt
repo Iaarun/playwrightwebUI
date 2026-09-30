@@ -1,0 +1,2 @@
+[ 'Open this select menu', 'One', 'Two', 'Three' ]
+Selected Value is: Open this select menu
